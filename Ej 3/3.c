@@ -2,8 +2,8 @@
 #include <stdlib.h>
 
 void printbin(unsigned long int number){
-    for(int i = 31; i >= 0; i--){
-        printf("%ld", (number & (1 << i)) >> i);
+    for(int i = 63; i >= 0; i--){
+        printf("%lu", (number & (1 << i)) >> i);
     }
     printf("\n");
 }
