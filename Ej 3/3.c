@@ -3,7 +3,7 @@
 
 void printbin(unsigned long int number){
     for(int i = 63; i >= 0; i--){
-        printf("%lu", (number & (1 << i)) >> i);
+        printf("%lu", (number >> i) & 1);
     }
     printf("\n");
 }
