@@ -1,19 +1,12 @@
 #include <stdio.h>
 #include <math.h>
 
-void printbin(unsigned long int number){
-    for(int i = 31; i >= 0; i--){
-        printf("%ld", (number & (1 << i)) >> i);
-    }
-    printf("\n");
-}
 
 int myisnan(float f){
     unsigned int num = *(unsigned*)&f;
     unsigned int m = (num & 0x007fffff) | (127 << 23);
     float mantissa = *(float*)&m;
     unsigned int e = (num & 0x7f800000) >> 23;
-    printbin(num);
     if(e == 255 && mantissa != 0){
         return 1;
     }else{
