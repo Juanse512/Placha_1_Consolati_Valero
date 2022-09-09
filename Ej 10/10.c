@@ -15,18 +15,16 @@ int myisnan(float f){
     unsigned int e = (num & 0x7f800000) >> 23;
     printbin(num);
     if(e == 255 && mantissa != 0){
-        printf("Es NAN\n");
+        return 1;
     }else{
-        printf("No es NAN\n");
+        return 0;
     }
 
 }
 
 int myisnan2(float f){
     unsigned int num = *(unsigned*)&f;
-    unsigned int res = num & 0xFFC00000;
-    printbin(res);
-    if(num == 0xFFC00000){
+    if(myisnan(f)){
         printf("Es NAN\n");
     }else{
         printf("No es NAN\n");
