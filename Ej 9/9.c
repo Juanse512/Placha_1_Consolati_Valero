@@ -17,7 +17,7 @@ int main(){
     printf("Ingrese un numero\n");
     scanf("%f", &a);
     f.f = a;
-    printf("ieee754 exponente: %u mantisa entera: %d\n", f.ieee.exponent, f.iee>
+    printf("ieee754 exponente: %u mantisa entera: %d\n", f.ieee.exponent, f.ieee.mantissa);
     get_float(a);
     return 0;
 }
